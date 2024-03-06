@@ -33,7 +33,7 @@ def main():
         st.image(image, caption='Imagem de células sanguíneas', use_column_width=True)
 
         # Carregar modelo
-        model = tf.keras.models.load_model("/Users/luizeduardovedoato/DEV/Xray/best_model.h5")  # Substitua "seu_modelo.h5" pelo caminho do seu modelo treinado
+        model = tf.keras.models.load_model("/Users/luizeduardovedoato/DEV/BloodCells/best_model.h5")  # Substitua "seu_modelo.h5" pelo caminho do seu modelo treinado
 
         # Classificar imagem
         if st.button('Classificar'):
