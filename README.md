@@ -30,5 +30,5 @@ Este script implementa uma aplicação web usando Streamlit para classificar ima
 
 ### Observações
 
-- Este script utiliza um modelo pré-treinado para classificação de células sanguíneas. Certifique-se de ter o modelo treinado disponível no caminho especificado (`/Users/luizeduardovedoato/DEV/Xray/best_model.h5`).
+- Este script utiliza um modelo pré-treinado para classificação de células sanguíneas. Certifique-se de ter o modelo treinado disponível no caminho especificado (`best_model.h5`).
 - O modelo pré-treinado deve ser treinado para classificar imagens de células sanguíneas em oito classes específicas: 'basophil', 'eosinophil', 'erythroblast', 'ig', 'lymphocyte', 'monocyte', 'neutrophil', 'platelet'.
