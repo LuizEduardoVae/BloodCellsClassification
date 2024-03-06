@@ -3,6 +3,8 @@ from PIL import Image
 import numpy as np
 import tensorflow as tf
 import pandas as pd
+import os
+       
 
 
 labels = ['basophil', 'eosinophil', 'erythroblast', 'ig', 'lymphocyte', 'monocyte', 'neutrophil', 'platelet']
@@ -33,8 +35,20 @@ def main():
         st.image(image, caption='Imagem de células sanguíneas', use_column_width=True)
 
         # Carregar modelo
-        model = tf.keras.models.load_model("/Users/luizeduardovedoato/DEV/BloodCells/best_model.h5")  # Substitua "seu_modelo.h5" pelo caminho do seu modelo treinado
 
+        # Define o diretório padrão para o modelo
+        DEFAULT_MODEL_DIR = "/path/to/default/model/directory"
+        # Define o nome do arquivo do modelo
+        MODEL_FILENAME = "best_model.h5"
+
+        # Obtém o diretório do modelo com base na variável de ambiente
+        model_dir = os.getenv("MODEL_DIR", DEFAULT_MODEL_DIR)
+        # Constrói o caminho completo para o modelo
+        model_path = os.path.join(model_dir, MODEL_FILENAME)
+
+        # Carrega o modelo
+        model = tf.keras.models.load_model(model_path)
+        
         # Classificar imagem
         if st.button('Classificar'):
             with st.spinner('Classificando...'):
